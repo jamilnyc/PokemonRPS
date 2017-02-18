@@ -10,5 +10,4 @@
     <string name="content_description_charmander_button">Charmander Button</string>
     <string name="content_description_squirtle_button">Squirtle Button</string>
     <string name="content_description_opponents_choice">Opponent\'s Choice</string>
-    <string name="result_text">Result</string>
 </resources>

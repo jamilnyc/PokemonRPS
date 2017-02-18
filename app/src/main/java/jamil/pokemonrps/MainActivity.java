@@ -1,5 +1,6 @@
 package jamil.pokemonrps;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -96,12 +97,17 @@ public class MainActivity extends AppCompatActivity {
         int resultText = playerWins
                 ? R.string.result_win
                 : R.string.result_lose;
+
         mResultTextView.setText(resultText);
+
+        String backgroundColor = playerWins ? "#47d147" : "#ff4d4d";
+        mResultTextView.setBackgroundColor(Color.parseColor(backgroundColor));
     }
 
     private void showTie()
     {
         mResultTextView.setText(R.string.result_tie);
+        mResultTextView.setBackgroundColor(Color.parseColor("#666666"));
     }
 
     private int getComputerChoice()
