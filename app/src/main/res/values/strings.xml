@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Pokemon RPS</string>
+    <string name="result_tie">It was a TIE!</string>
+    <string name="result_win">You win!</string>
+    <string name="result_lose">You lose!</string>
+    <string name="choose_your_pokemon">Choose your Pokemon!</string>
+    <string name="label_computer_choice">Computer\'s Choice</string>
+    <string name="label_player_choice">Player\'s Choice</string>
+    <string name="content_description_bulbasaur_button">Bulbasaur Button</string>
+    <string name="content_description_charmander_button">Charmander Button</string>
+    <string name="content_description_squirtle_button">Squirtle Button</string>
+    <string name="content_description_opponents_choice">Opponent\'s Choice</string>
+    <string name="result_text">Result</string>
 </resources>

@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mBulbasaurButton = (ImageButton) findViewById(R.id.playerBulbasaur);
         mCharmanderButton = (ImageButton) findViewById(R.id.playerCharmander);
         mSquirtleButton = (ImageButton) findViewById(R.id.playerSquirtle);
+        mComputerChoice = (ImageView) findViewById(R.id.computerChoice);
 
         mResultTextView = (TextView) findViewById(R.id.resultTextView);
 
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         mSquirtleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                determineResult(CHOICE_CHARMANDER);
+                determineResult(CHOICE_SQUIRTLE);
             }
         });
     }
@@ -68,17 +69,20 @@ public class MainActivity extends AppCompatActivity {
     private void determineResult(int playerChoice)
     {
         int computerChoice = getComputerChoice();
+        displayComputerChoice(computerChoice);
 
         if (playerChoice == computerChoice) {
-            // Tie
             showTie();
             Log.d(TAG, "Result is a tie.");
         } else {
             if (playerChoice == CHOICE_BULBASAUR) {
+                Log.d(TAG, "Play chose Bulbasaur");
                 showResult(computerChoice == CHOICE_SQUIRTLE);
             } else if (playerChoice == CHOICE_CHARMANDER) {
+                Log.d(TAG, "Play chose Charmander");
                 showResult(computerChoice == CHOICE_BULBASAUR);
             } else if (playerChoice == CHOICE_SQUIRTLE) {
+                Log.d(TAG, "Play chose Squirtle");
                 showResult(computerChoice == CHOICE_CHARMANDER);
             } else {
                 Log.d(TAG, "Error!");
@@ -88,18 +92,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void showResult(boolean playerWins)
     {
-        String resultText = playerWins
-                ? "You win!"
-                : "Sorry, you lose!";
-
+        Log.d(TAG, "Play wins: " + playerWins);
+        int resultText = playerWins
+                ? R.string.result_win
+                : R.string.result_lose;
         mResultTextView.setText(resultText);
     }
 
     private void showTie()
     {
-        mResultTextView.setText("It was a TIE!");
+        mResultTextView.setText(R.string.result_tie);
     }
-
 
     private int getComputerChoice()
     {
@@ -108,5 +111,21 @@ public class MainActivity extends AppCompatActivity {
         choice = rand.nextInt((CHOICE_SQUIRTLE - CHOICE_BULBASAUR) + 1) + CHOICE_BULBASAUR;
         Log.d(TAG, "Computer Choice: " + choice);
         return choice;
+    }
+
+    private void displayComputerChoice(int computerChoice)
+    {
+        Log.d(TAG, "Updating computer choice image");
+        switch (computerChoice) {
+            case CHOICE_BULBASAUR:
+                mComputerChoice.setImageResource(R.drawable.bulbasaur);
+                break;
+            case CHOICE_CHARMANDER:
+                mComputerChoice.setImageResource(R.drawable.charmander);
+                break;
+            case CHOICE_SQUIRTLE:
+                mComputerChoice.setImageResource(R.drawable.squirtle);
+                break;
+        }
     }
 }
