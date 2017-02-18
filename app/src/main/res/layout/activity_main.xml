@@ -52,7 +52,9 @@
         android:id="@+id/playerBulbasaur"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/content_description_bulbasaur_button"/>
+        android:contentDescription="@string/content_description_bulbasaur_button"
+        android:background="?android:selectableItemBackground"
+        />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -66,7 +68,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignLeft="@+id/playerBulbasaur"
         android:layout_alignStart="@+id/playerBulbasaur"
-        android:contentDescription="@string/content_description_charmander_button"/>
+        android:contentDescription="@string/content_description_charmander_button"
+        android:background="?android:selectableItemBackground"
+        />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -81,7 +85,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignLeft="@+id/playerCharmander"
         android:layout_alignStart="@+id/playerCharmander"
-        android:contentDescription="@string/content_description_squirtle_button"/>
+        android:contentDescription="@string/content_description_squirtle_button"
+        android:background="?android:selectableItemBackground"
+        />
 
     <ImageView
         android:layout_width="wrap_content"

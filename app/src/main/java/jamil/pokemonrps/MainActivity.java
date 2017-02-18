@@ -72,6 +72,23 @@ public class MainActivity extends AppCompatActivity {
         int computerChoice = getComputerChoice();
         displayComputerChoice(computerChoice);
 
+        // Set button transparencies
+        float opaque = 1f;
+        float transparent = 0.35f;
+        if (playerChoice == CHOICE_BULBASAUR) {
+            mBulbasaurButton.setAlpha(opaque);
+            mCharmanderButton.setAlpha(transparent);
+            mSquirtleButton.setAlpha(transparent);
+        } else if (playerChoice == CHOICE_CHARMANDER) {
+            mBulbasaurButton.setAlpha(transparent);
+            mCharmanderButton.setAlpha(opaque);
+            mSquirtleButton.setAlpha(transparent);
+        } else if (playerChoice == CHOICE_SQUIRTLE) {
+            mBulbasaurButton.setAlpha(transparent);
+            mCharmanderButton.setAlpha(transparent);
+            mSquirtleButton.setAlpha(opaque);
+        }
+
         if (playerChoice == computerChoice) {
             showTie();
             Log.d(TAG, "Result is a tie.");
