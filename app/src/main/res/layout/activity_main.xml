@@ -112,4 +112,29 @@
         android:textAlignment="center"
         android:textColor="@android:color/white"/>
 
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp"
+        android:id="@+id/playerPoints"
+        android:textSize="24sp"
+        android:layout_alignBaseline="@+id/computerPoints"
+        android:layout_alignBottom="@+id/computerPoints"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginStart="52dp"
+        android:id="@+id/computerPoints"
+        android:layout_above="@+id/playerLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24sp"/>
+
 </RelativeLayout>

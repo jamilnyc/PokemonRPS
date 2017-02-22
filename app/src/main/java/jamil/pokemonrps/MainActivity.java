@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -23,10 +25,13 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mBulbasaurButton;
     private ImageButton mCharmanderButton;
     private ImageButton mSquirtleButton;
-
     private TextView mResultTextView;
-
     private ImageView mComputerChoice;
+    private TextView mPlayerPointsTextView;
+    private TextView mComputerPointsTextView;
+
+    private int mPlayerPoints = 0;
+    private int mComputerPoints = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         mComputerChoice = (ImageView) findViewById(R.id.computerChoice);
 
         mResultTextView = (TextView) findViewById(R.id.resultTextView);
+        mPlayerPointsTextView = (TextView) findViewById(R.id.playerPoints);
+        mComputerPointsTextView = (TextView) findViewById(R.id.computerPoints);
 
         setUpButtonListeners();
     }
@@ -114,6 +121,14 @@ public class MainActivity extends AppCompatActivity {
         int resultText = playerWins
                 ? R.string.result_win
                 : R.string.result_lose;
+
+        if (playerWins) {
+            ++mPlayerPoints;
+            mPlayerPointsTextView.setText("" + mPlayerPoints);
+        } else {
+            ++mComputerPoints;
+            mComputerPointsTextView.setText("" + mComputerPoints);
+        }
 
         mResultTextView.setText(resultText);
 
